@@ -26,11 +26,10 @@ jobs:
         with:
            python-version: 3.7
       - name: 'Install requirements'
-        run: pip install -r ./Spider/requirements.txt
+        run: python -m pip install --upgrade pip
+          pip install requests openpyxl beautifulsoup4 selenium
       - name: 'Working'
         run: |
-          python -m pip install --upgrade pip
-          pip install openpyxl
           sudo cp -p ./chrome/chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
           python ./Spider/qd.py
