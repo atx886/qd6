@@ -81,12 +81,13 @@ def qd(d):
     d.get('https://www.chaojijishi.com/h5/#/pages/activityList/integral/integral')
     rw()
 
-    d.find_element_by_xpath(
-        '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[2]/uni-view[1]/uni-view[4]/uni-view[1]/uni-view[2]/uni-view').click()
     ms = d.find_element_by_xpath(
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[2]/uni-view[1]/uni-view[4]/uni-view[1]/uni-view[2]/uni-view').text
     print(ms)
     if ms == "点击签到":
+        rw()
+        d.find_element_by_xpath(
+            '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[2]/uni-view[1]/uni-view[4]/uni-view[1]/uni-view[2]/uni-view').click()
         return 1
     else:
         return 0
